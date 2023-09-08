@@ -1,5 +1,13 @@
+import PostSummary from "./PostSummary";
+
 const PostsLatest: React.FC = () => {
-  return <></>;
+  return (
+    <div className="space-y-12">
+      <PostSummary />
+      <PostSummary />
+      <PostSummary />
+    </div>
+  );
 };
 
 export default PostsLatest;
