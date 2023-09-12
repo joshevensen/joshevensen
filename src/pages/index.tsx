@@ -1,7 +1,6 @@
 import SideWidget from "@/components/SideWidget";
 import PageContainer from "@/layout/PageContainer";
 import PageHero from "@/layout/PageHero";
-import PostsLatest from "@/components/PostsLatest";
 import ProjectItem from "@/components/ProjectItem";
 import WorkItem from "@/components/WorkItem";
 import {
@@ -9,8 +8,28 @@ import {
   ComputerDesktopIcon,
 } from "@heroicons/react/24/outline";
 import Head from "next/head";
+import { Article } from "@/data/models/Article";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import PostSummary from "@/components/PostSummary";
+import { siteConfig } from "@/data/site.config";
 
-const HomePage: React.FC = () => {
+type props = {
+  featuredArticles: Article[];
+};
+
+export const getStaticProps: GetStaticProps<props> = () => {
+  const featuredArticles = Article.list(true);
+
+  return {
+    props: {
+      featuredArticles: featuredArticles,
+    },
+  };
+};
+
+const HomePage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
+  featuredArticles,
+}) => {
   return (
     <>
       <Head>
@@ -25,7 +44,11 @@ const HomePage: React.FC = () => {
 
       <PageContainer>
         <div className="flex justify-between">
-          <PostsLatest />
+          <div className="flex-grow space-y-12">
+            {featuredArticles.map((article) => (
+              <PostSummary key={article.slug} article={article} />
+            ))}
+          </div>
 
           <div className="space-y-12 ml-16">
             <SideWidget

@@ -19,15 +19,10 @@ const config: Config = {
       orange: "#E55807",
       beige: "#f4f0e5",
       beigeDark: "#e3ded2",
+      red: "#B22727",
     },
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-    },
+    extend: {},
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
 };
 export default config;

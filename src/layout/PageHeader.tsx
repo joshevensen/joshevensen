@@ -26,8 +26,8 @@ const PageHeader: React.FC = () => {
 
           <div className="flex items-center space-x-12">
             <nav className="space-x-6">
-              <NavLink href="/articles">Articles</NavLink>
-              <NavLink href="/software-ideas">Software Ideas</NavLink>
+              <NavLink href="/articles">Blog</NavLink>
+              {/* <NavLink href="/software-ideas">Software Ideas</NavLink> */}
               <NavLink href="/about-me">About Me</NavLink>
             </nav>
 

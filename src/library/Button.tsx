@@ -4,14 +4,18 @@ type props = {
   children: any;
   isOutlined?: boolean;
   href?: string;
+  type?: "button" | "submit";
   onClick?: () => void;
+  disabled?: boolean;
 };
 
 const LibButton: React.FC<props> = ({
   children,
   isOutlined = false,
   href,
+  type = "button",
   onClick,
+  disabled = false,
 }) => {
   const router = useRouter();
 
@@ -24,16 +28,22 @@ const LibButton: React.FC<props> = ({
   }
 
   let classes =
-    "block rounded-md py-1 px-4 font-bold hover:bg-yellow hover:text-blueDark";
+    "block border-2 border-orange rounded-md py-0.5 px-4 font-bold hover:bg-yellow hover:border-yellow hover:text-blueDark disabled:opacity-50 disabled:border-orange disabled:cursor-not-allowed";
 
   if (isOutlined) {
-    classes += " border-2 border-orange text-orange hover:border-yellow";
+    classes +=
+      " bg-transparent text-orange disabled:text-orange disabled:bg-transparent";
   } else {
-    classes += " bg-orange text-beige";
+    classes += " bg-orange text-beige disabled:bg-orange disabled:text-beige";
   }
 
   return (
-    <button className={classes} type="button" onClick={clickButton}>
+    <button
+      className={classes}
+      type={type}
+      onClick={clickButton}
+      disabled={disabled}
+    >
       {children}
     </button>
   );

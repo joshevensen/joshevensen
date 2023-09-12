@@ -9,14 +9,14 @@ const PageFooter: React.FC = () => {
             Home
           </Link>
           <Link className="text-sm text-blueDark font-bold" href="/articles">
-            Articles
+            Blog
           </Link>
-          <Link
+          {/* <Link
             className="text-sm text-blueDark font-bold"
             href="/software-ideas"
           >
             Software Ideas
-          </Link>
+          </Link> */}
           <Link className="text-sm text-blueDark font-bold" href="/about-me">
             About Me
           </Link>

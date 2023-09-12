@@ -1,10 +1,14 @@
+import { Article } from "@/data/models/Article";
+import { useRouter } from "next/router";
+
 type props = {
+  article: Article;
   isWide?: boolean;
 };
 
-const PostSummary: React.FC<props> = ({ isWide = false }) => {
+const PostSummary: React.FC<props> = ({ article, isWide = false }) => {
+  const router = useRouter();
   let dateClasses = "text-blue";
-  let summaryClasses = "";
 
   if (isWide) {
     dateClasses += " flex-shrink-0 w-48 pt-4";
@@ -12,21 +16,21 @@ const PostSummary: React.FC<props> = ({ isWide = false }) => {
     dateClasses += " pl-3 text-sm";
   }
 
+  function goToArticle() {
+    router.push(`/articles/${article.slug}`);
+  }
+
   return (
     <div className={isWide ? "flex" : ""}>
-      <p className={dateClasses}>September 5, 2023</p>
+      <p className={dateClasses}>{article.date}</p>
 
-      <div className="p-3 cursor-pointer hover:bg-beigeDark">
-        <h3 className="mb-1 text-3xl font-bold">
-          Crafting a design system for a multiplanetary future
-        </h3>
+      <div
+        onClick={goToArticle}
+        className="flex-grow p-3 cursor-pointer hover:bg-beigeDark"
+      >
+        <h3 className="mb-1 text-3xl font-bold">{article.title}</h3>
 
-        <p>
-          Most companies try to stay ahead of the curve when it comes to visual
-          design, but for Planetaria we needed to create a brand that would
-          still inspire us 100 years from now when humanity has spread across
-          our entire solar system.
-        </p>
+        <p>{article.excerpt}</p>
 
         <p className="mt-4 text-sm text-orange">Read Article {">"}</p>
       </div>

@@ -1,10 +1,14 @@
+import LikeItem from "@/components/LikeItem";
 import SideWidget from "@/components/SideWidget";
+import { siteConfig } from "@/data/site.config";
 import PageContainer from "@/layout/PageContainer";
 import PageHero from "@/layout/PageHero";
 import { HeartIcon } from "@heroicons/react/24/outline";
 import Head from "next/head";
 
 const AboutPage: React.FC = () => {
+  const links = siteConfig.affiliateLinks;
+
   return (
     <>
       <Head>
@@ -18,7 +22,7 @@ const AboutPage: React.FC = () => {
 
       <PageContainer>
         <div className="flex justify-between">
-          <div className="space-y-6">
+          <div className="prose prose-slate">
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex
               consequatur, voluptatum eveniet, ratione perspiciatis illo facilis
@@ -57,11 +61,50 @@ const AboutPage: React.FC = () => {
               icon={<HeartIcon className="w-5 h-5 mr-2" />}
               width="w-96"
             >
-              <div>
-                <p>React, NextJS, ReactNative</p>
+              <LikeItem
+                name="React, NextJS, ReactNative"
+                borderColor="border-orange"
+              >
+                <p>
+                  I started with Vue, but recently I've become a huge fan React.
+                </p>
+              </LikeItem>
 
-                <p></p>
-              </div>
+              <LikeItem link={links.VSCode} name="VS Code">
+                <p>This is my goto editor for client side projects.</p>
+              </LikeItem>
+
+              <LikeItem
+                link={links.Ergodox}
+                name="Ergodox EZ"
+                borderColor="border-yellow"
+              >
+                <p>
+                  This keyboard works great with my 14" Macbook Pro in between.
+                </p>
+              </LikeItem>
+
+              <LikeItem
+                link={links.DigitalOcean}
+                name="Digital Ocean"
+                borderColor="border-teal"
+              >
+                <p>
+                  Some may like AWS, but I prefer an underdog that cares about
+                  it's customers.
+                </p>
+              </LikeItem>
+
+              <LikeItem link={links.PhpStorm} name="PHPStorm">
+                <p>Yep, I have two favorite editors.</p>
+              </LikeItem>
+
+              <LikeItem link={links.Laravel} name="Laravel">
+                <p>
+                  This is the first major framework I learned way back in the
+                  beginning and it will always hold a special place in my heart
+                </p>
+              </LikeItem>
             </SideWidget>
           </div>
         </div>

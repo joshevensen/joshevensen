@@ -1,10 +1,32 @@
 import PageContainer from "@/layout/PageContainer";
 import PageHero from "@/layout/PageHero";
 import PostSummary from "@/components/PostSummary";
-import LibButton from "@/library/Button";
 import Head from "next/head";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { Article } from "@/data/models/Article";
+import LibPagination from "@/library/Pagination";
+import { siteConfig } from "@/data/site.config";
 
-const ArticlesPage: React.FC = () => {
+type props = {
+  articles: Article[];
+};
+
+export const getStaticProps: GetStaticProps<props> = () => {
+  const articles = Article.list();
+
+  return {
+    props: {
+      articles: articles,
+    },
+  };
+};
+
+const ArticlesPage: React.FC<
+  InferGetStaticPropsType<typeof getStaticProps>
+> = ({ articles }) => {
+  const articleCount = articles.length;
+  let currentPage = 1;
+
   return (
     <>
       <Head>
@@ -18,23 +40,19 @@ const ArticlesPage: React.FC = () => {
 
       <PageContainer>
         <div className="max-w-4xl space-y-16">
-          <PostSummary isWide={true} />
-          <PostSummary isWide={true} />
-          <PostSummary isWide={true} />
-          <PostSummary isWide={true} />
-          <PostSummary isWide={true} />
-          <PostSummary isWide={true} />
-          <PostSummary isWide={true} />
+          {articles.map((article) => (
+            <PostSummary key={article.slug} article={article} isWide={true} />
+          ))}
         </div>
 
-        <div className="flex justify-between mt-4 max-w-4xl pt-3 border-t border-tealLight">
-          <p className="text-teal">Showing 1 to 10 of 20 results</p>
-
-          <div className="flex space-x-4">
-            <LibButton isOutlined={true}>Prev</LibButton>
-            <LibButton isOutlined={true}>Next</LibButton>
-          </div>
-        </div>
+        {/* {articleCount > 10 && (
+          <LibPagination
+            label="article"
+            total={articleCount}
+            perPage={siteConfig.pagination.perPage}
+            currentPage={currentPage}
+          />
+        )} */}
       </PageContainer>
     </>
   );
