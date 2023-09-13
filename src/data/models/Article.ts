@@ -2,9 +2,17 @@ import { getFile, getFileNames, getFiles } from "../../helpers/content.helper";
 import IFile from "../interfaces/file.interface";
 
 function convertFileToArticle(file: IFile) {
-  const dateString = file.data.date ? file.data.date : null;
+  const publishedAtString = file.data.publishedAt ? file.data.publishedAt : null;
 
-  const date = new Date(dateString).toLocaleDateString("en-US", {
+  const updatedAtString = file.data.updatedAt ? file.data.updatedAt : null;
+
+  const publishedAt = new Date(publishedAtString).toLocaleDateString("en-US", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+
+  const updatedAt = new Date(updatedAtString).toLocaleDateString("en-US", {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -12,7 +20,8 @@ function convertFileToArticle(file: IFile) {
 
   return {
     title: file.data.title ? file.data.title : "",
-    date,
+    publishedAt,
+    updatedAt,
     slug: file.slug ? file.slug : "",
     excerpt: file.data.excerpt ? file.data.excerpt : "",
     isFeatured: file.data.isFeatured ? file.data.isFeatured : false,
@@ -26,7 +35,8 @@ export class Article {
 
   constructor(
     public title: string,
-    public date: string,
+    public publishedAt: string | null,
+    public updatedAt: string | null,
     public slug: string,
     public excerpt: string,
     public isFeatured: boolean,
@@ -36,7 +46,7 @@ export class Article {
 
   static slugs() {
     const fileNames = getFileNames(this.directory);
-    return fileNames.map((fileName) => fileName.replace(/\.md$/, ""));
+    return fileNames.map((fileName: string) => fileName.replace(/\.md$/, ""));
   }
 
   static list(onlyFeatured = false) {
@@ -51,7 +61,7 @@ export class Article {
 
     // Sort articles so newer articles first
     const sortedArticles = publishedArticles.sort(
-      (fileA: Article, fileB: Article) => (fileA.date > fileB.date ? -1 : 1)
+      (fileA: Article, fileB: Article) => (fileA.updatedAt > fileB.updatedAt ? -1 : 1)
     );
 
     // Optional flag to only return featured articles
