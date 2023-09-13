@@ -2,6 +2,7 @@ import { Article } from "@/data/models/Article";
 import { siteConfig } from "@/data/site.config";
 import PageContainer from "@/layout/PageContainer";
 import PageHero from "@/layout/PageHero";
+import LibMarkdown from "@/library/Markdown";
 import type {
   InferGetStaticPropsType,
   GetStaticProps,
@@ -9,7 +10,6 @@ import type {
 } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 type props = {
   article: Article;
@@ -59,10 +59,13 @@ const ArticlePage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
       <PageContainer>
         <div className="flex items-center mb-4">
           <Link href="/articles">Back to Blog</Link>
-          <p className="ml-4 italic">Written {article.date}</p>
+          <p className="ml-4 italic">
+            Written {article.publishedAt}{" "}
+            {article.updatedAt && `Last Updated ${article.updatedAt}`}
+          </p>
         </div>
 
-        <ReactMarkdown children={article.content}></ReactMarkdown>
+        <LibMarkdown>{article.content}</LibMarkdown>
       </PageContainer>
     </>
   );

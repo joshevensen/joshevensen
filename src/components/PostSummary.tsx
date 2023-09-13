@@ -22,7 +22,9 @@ const PostSummary: React.FC<props> = ({ article, isWide = false }) => {
 
   return (
     <div className={isWide ? "flex" : ""}>
-      <p className={dateClasses}>{article.date}</p>
+      <p className={dateClasses}>
+        {article.updatedAt ? article.updatedAt : article.publishedAt}
+      </p>
 
       <div
         onClick={goToArticle}

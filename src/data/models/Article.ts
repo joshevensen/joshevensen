@@ -2,7 +2,9 @@ import { getFile, getFileNames, getFiles } from "../../helpers/content.helper";
 import IFile from "../interfaces/file.interface";
 
 function convertFileToArticle(file: IFile) {
-  const publishedAtString = file.data.publishedAt ? file.data.publishedAt : null;
+  const publishedAtString = file.data.publishedAt
+    ? file.data.publishedAt
+    : null;
 
   const updatedAtString = file.data.updatedAt ? file.data.updatedAt : null;
 
@@ -19,13 +21,12 @@ function convertFileToArticle(file: IFile) {
   });
 
   return {
-    title: file.data.title ? file.data.title : "",
-    publishedAt,
-    updatedAt,
-    slug: file.slug ? file.slug : "",
-    excerpt: file.data.excerpt ? file.data.excerpt : "",
-    isFeatured: file.data.isFeatured ? file.data.isFeatured : false,
     publish: file.data.publish ? file.data.publish : false,
+    publishedAt,
+    updatedAt: updatedAtString ? updatedAt : null,
+    slug: file.slug ? file.slug : "",
+    title: file.data.title ? file.data.title : "",
+    excerpt: file.data.excerpt ? file.data.excerpt : "",
     content: file.content ? file.content : "",
   };
 }
@@ -34,13 +35,12 @@ export class Article {
   static directory = "/articles";
 
   constructor(
-    public title: string,
-    public publishedAt: string | null,
+    public publish: boolean,
+    public publishedAt: string,
     public updatedAt: string | null,
     public slug: string,
+    public title: string,
     public excerpt: string,
-    public isFeatured: boolean,
-    public publish: boolean,
     public content: string
   ) {}
 
@@ -49,7 +49,7 @@ export class Article {
     return fileNames.map((fileName: string) => fileName.replace(/\.md$/, ""));
   }
 
-  static list(onlyFeatured = false) {
+  static list() {
     const fileData = getFiles(this.directory);
 
     const articles: Article[] = fileData.map((file: IFile) => {
@@ -61,13 +61,13 @@ export class Article {
 
     // Sort articles so newer articles first
     const sortedArticles = publishedArticles.sort(
-      (fileA: Article, fileB: Article) => (fileA.updatedAt > fileB.updatedAt ? -1 : 1)
-    );
+      (fileA: Article, fileB: Article) => {
+        const fileADate = fileA.updatedAt ? fileA.updatedAt : fileA.publishedAt;
+        const fileBDate = fileB.updatedAt ? fileB.updatedAt : fileB.publishedAt;
 
-    // Optional flag to only return featured articles
-    if (onlyFeatured) {
-      return sortedArticles.filter((article) => article.isFeatured);
-    }
+        return fileADate > fileBDate ? -1 : 1;
+      }
+    );
 
     return sortedArticles;
   }
