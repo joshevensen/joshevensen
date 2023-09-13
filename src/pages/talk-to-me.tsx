@@ -5,6 +5,7 @@ import PageContainer from "@/layout/PageContainer";
 import PageHero from "@/layout/PageHero";
 import LibButton from "@/library/Button";
 import LibInput from "@/library/Input";
+import { InputType } from "@/data/enums/InputType.enum";
 
 type FormValues = {
   name: string;
@@ -86,7 +87,7 @@ const HirePage: React.FC = () => {
                   },
                 }}
                 error={errors.email}
-                type="email"
+                type={InputType.Email}
               />
 
               <LibInput
@@ -95,7 +96,7 @@ const HirePage: React.FC = () => {
                 control={control}
                 rules={{ required: "Message is required" }}
                 error={errors.message}
-                isMultiline={true}
+                type={InputType.Multiline}
               />
 
               <div className="flex justify-end">

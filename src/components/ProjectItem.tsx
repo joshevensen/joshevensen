@@ -4,18 +4,14 @@ type props = {
   children: any;
   name: string;
   link: string;
-  borderColor?:
-    | "border-blue"
-    | "border-teal"
-    | "border-yellow"
-    | "border-orange";
+  borderColor: string;
 };
 
 const ProjectItem: React.FC<props> = ({
   children,
   name,
   link,
-  borderColor = "border-teal",
+  borderColor,
 }) => {
   return (
     <div className={`pl-3 border-l-4 ${borderColor}`}>

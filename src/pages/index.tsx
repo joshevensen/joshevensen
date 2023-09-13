@@ -8,28 +8,9 @@ import {
   ComputerDesktopIcon,
 } from "@heroicons/react/24/outline";
 import Head from "next/head";
-import { Article } from "@/data/models/Article";
-import { GetStaticProps, InferGetStaticPropsType } from "next";
-import PostSummary from "@/components/PostSummary";
-import { siteConfig } from "@/data/site.config";
+import { getColor } from "@/helpers/color.helper";
 
-type props = {
-  featuredArticles: Article[];
-};
-
-export const getStaticProps: GetStaticProps<props> = () => {
-  const featuredArticles = Article.list(true);
-
-  return {
-    props: {
-      featuredArticles: featuredArticles,
-    },
-  };
-};
-
-const HomePage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
-  featuredArticles,
-}) => {
+const HomePage: React.FC = () => {
   return (
     <>
       <Head>
@@ -44,10 +25,37 @@ const HomePage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
       <PageContainer>
         <div className="flex justify-between">
-          <div className="flex-grow space-y-12">
-            {featuredArticles.map((article) => (
-              <PostSummary key={article.slug} article={article} />
-            ))}
+          <div className="flex-grow prose">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex
+              consequatur, voluptatum eveniet, ratione perspiciatis illo facilis
+              sed autem laudantium soluta blanditiis? At distinctio est,
+              provident in voluptatibus animi qui a?
+            </p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita
+              dolore, corporis natus, iste optio dolores dolor nulla nostrum
+              molestiae maxime quia rerum corrupti praesentium, ut doloribus
+              veniam non minus nihil.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
+              quod iste ducimus fuga enim officiis pariatur aperiam natus quos
+              recusandae consequuntur, placeat tenetur! Facere aperiam
+              architecto cumque eaque, pariatur ea?
+            </p>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Distinctio explicabo ipsum dolorem alias nulla eligendi deleniti
+              eveniet iste, cum cumque quasi voluptates sed quo iusto ipsa ut
+              quos architecto reiciendis?
+            </p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex
+              consequatur, voluptatum eveniet, ratione perspiciatis illo facilis
+              sed autem laudantium soluta blanditiis? At distinctio est,
+              provident in voluptatibus animi qui a?
+            </p>
           </div>
 
           <div className="space-y-12 ml-16">
@@ -58,7 +66,7 @@ const HomePage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
               <ProjectItem
                 name="Novelize"
                 link="getnovelize.com"
-                borderColor="border-orange"
+                borderColor={getColor(0, "border-")}
               >
                 <p>Novel Writing Software</p>
               </ProjectItem>
@@ -66,7 +74,7 @@ const HomePage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
               <ProjectItem
                 name="Forefront CRM"
                 link="forefrontcrm.com"
-                borderColor="border-yellow"
+                borderColor={getColor(1, "border-")}
               >
                 <p>Real Estate Investor Software</p>
               </ProjectItem>
@@ -80,14 +88,14 @@ const HomePage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
                 name="Even7 Development, LLC"
                 title="Owner"
                 startAt="2016"
-                borderColor="border-teal"
+                borderColor={getColor(2, "border-")}
               />
 
               <WorkItem
                 name="Random Noise Media, LLC"
                 title="Product Manager"
                 startAt="2023"
-                borderColor="border-blue"
+                borderColor={getColor(3, "border-")}
               />
 
               <WorkItem
@@ -95,7 +103,7 @@ const HomePage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
                 title="Software Manager"
                 startAt="2018"
                 endAt="2023"
-                borderColor="border-orange"
+                borderColor={getColor(4, "border-")}
               />
             </SideWidget>
           </div>

@@ -3,11 +3,7 @@ type props = {
   title: string;
   startAt: string;
   endAt?: string;
-  borderColor?:
-    | "border-blue"
-    | "border-teal"
-    | "border-yellow"
-    | "border-orange";
+  borderColor: string;
 };
 
 const WorkItem: React.FC<props> = ({
@@ -15,7 +11,7 @@ const WorkItem: React.FC<props> = ({
   title,
   startAt,
   endAt = "present",
-  borderColor = "border-teal",
+  borderColor,
 }) => {
   return (
     <div className={`pl-3 border-l-4 ${borderColor}`}>

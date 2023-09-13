@@ -5,7 +5,7 @@ import Head from "next/head";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { Article } from "@/data/models/Article";
 import LibPagination from "@/library/Pagination";
-import { siteConfig } from "@/data/site.config";
+import { siteConfig } from "@/site.config";
 
 type props = {
   articles: Article[];

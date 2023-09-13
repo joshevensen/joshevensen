@@ -26,12 +26,14 @@ const PageHeader: React.FC = () => {
 
           <div className="flex items-center space-x-12">
             <nav className="space-x-6">
-              <NavLink href="/articles">Blog</NavLink>
-              {/* <NavLink href="/software-ideas">Software Ideas</NavLink> */}
-              <NavLink href="/about-me">About Me</NavLink>
+              <NavLink href="/articles">Articles</NavLink>
+              <NavLink href="/software-ideas">Software Ideas</NavLink>
+              <NavLink href="/favorites">Favorites</NavLink>
             </nav>
 
-            <LibButton href="/talk-to-me">Talk To Me!</LibButton>
+            <LibButton href="/talk-to-me" hoverColor="teal">
+              Talk To Me!
+            </LibButton>
           </div>
         </header>
       </div>

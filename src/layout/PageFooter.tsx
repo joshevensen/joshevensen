@@ -9,16 +9,19 @@ const PageFooter: React.FC = () => {
             Home
           </Link>
           <Link className="text-sm text-blueDark font-bold" href="/articles">
-            Blog
+            Articles
           </Link>
-          {/* <Link
+          <Link
             className="text-sm text-blueDark font-bold"
             href="/software-ideas"
           >
             Software Ideas
-          </Link> */}
-          <Link className="text-sm text-blueDark font-bold" href="/about-me">
-            About Me
+          </Link>
+          <Link className="text-sm text-blueDark font-bold" href="/favorites">
+            Favorites
+          </Link>
+          <Link className="text-sm text-blueDark font-bold" href="/talk-to-me">
+            Contact
           </Link>
         </nav>
         <p className="text-sm text-blue">

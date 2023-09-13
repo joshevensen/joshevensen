@@ -1,5 +1,5 @@
 import { Article } from "@/data/models/Article";
-import { siteConfig } from "@/data/site.config";
+import { siteConfig } from "@/site.config";
 import PageContainer from "@/layout/PageContainer";
 import PageHero from "@/layout/PageHero";
 import LibMarkdown from "@/library/Markdown";
