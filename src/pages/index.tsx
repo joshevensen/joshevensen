@@ -14,18 +14,18 @@ const HomePage: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Josh Evensen | SaaS Builder</title>
+        <title>Josh Evensen | Software Consultant</title>
       </Head>
 
-      <PageHero heading="Developer, Designer, Geek... SaaS Builder">
-        Hello World, my name is Josh, I'm just your friendly neighborhood SaaS
-        builder. This is a site all about me and the thing I care about most:
-        software. Just don't tell my wife ;)
+      <PageHero heading="Engineer, Designer, Entrepreneur... Software Consultant">
+        Hello World, my name is Josh, I'm just your friendly neighborhood
+        Software Consultant. This is a site all about me and the thing I care
+        about most: software. Just don't tell my wife ;)
       </PageHero>
 
       <PageContainer>
-        <div className="flex justify-between">
-          <div className="flex-grow prose">
+        <div className="md:flex md:justify-between">
+          <div className="md:flex-grow prose">
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex
               consequatur, voluptatum eveniet, ratione perspiciatis illo facilis
@@ -58,7 +58,7 @@ const HomePage: React.FC = () => {
             </p>
           </div>
 
-          <div className="space-y-12 ml-16">
+          <div className="mt-12 md:mt-0 md:ml-16 space-y-12">
             <SideWidget
               heading="Noteable Projects"
               icon={<ComputerDesktopIcon className="h-5 w-5 mr-2" />}
@@ -86,7 +86,7 @@ const HomePage: React.FC = () => {
             >
               <WorkItem
                 name="Even7 Development, LLC"
-                title="Owner"
+                title="Owner, Founder"
                 startAt="2016"
                 borderColor={getColor(2, "border-")}
               />
@@ -100,7 +100,7 @@ const HomePage: React.FC = () => {
 
               <WorkItem
                 name="Freedom Driven, LLC"
-                title="Software Manager"
+                title="Software Engineer"
                 startAt="2018"
                 endAt="2023"
                 borderColor={getColor(4, "border-")}

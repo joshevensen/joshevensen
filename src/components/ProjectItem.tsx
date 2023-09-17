@@ -15,19 +15,20 @@ const ProjectItem: React.FC<props> = ({
 }) => {
   return (
     <div className={`pl-3 border-l-4 ${borderColor}`}>
-      <p className="text-xl font-bold leading-none">{name}</p>
+      <p className="mb-1 text-xl font-bold leading-none">{name}</p>
 
-      <div className="mb-1">{children}</div>
-
-      <a
-        className="flex items-center text-orange hover:text-yellow"
-        href={`https://${link}`}
-        target="_blank"
-        rel="noopener"
-      >
-        <LinkIcon className="h-4 w-4 mr-1" />
-        {link}
-      </a>
+      <div className="flex items-start flex-wrap">
+        <div className="sm:mb-1 mr-4">{children}</div>
+        <a
+          className="flex items-center text-orange hover:text-yellow"
+          href={`https://${link}`}
+          target="_blank"
+          rel="noopener"
+        >
+          <LinkIcon className="h-4 w-4 mr-1" />
+          {link}
+        </a>
+      </div>
     </div>
   );
 };

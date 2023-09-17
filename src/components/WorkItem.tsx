@@ -17,7 +17,7 @@ const WorkItem: React.FC<props> = ({
     <div className={`pl-3 border-l-4 ${borderColor}`}>
       <p className="text-xl font-bold leading-none">{name}</p>
 
-      <div className="mt-2 flex justify-between items-center text-blue leading-none">
+      <div className="flex justify-between items-center max-w-sm mt-2 text-blue leading-none">
         <p>{title}</p>
         <p className="text-sm">
           {startAt} - {endAt}

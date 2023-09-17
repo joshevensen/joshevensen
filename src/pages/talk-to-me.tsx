@@ -41,13 +41,14 @@ const HirePage: React.FC = () => {
       </Head>
 
       <PageHero heading="Been around the world, I speak many computer languages...">
-        Talk nerdy to me. No really let's talk about norse mythology, keyboards,
-        D&D, or maybe about that software project you need help with.
+        Talk nerdy to me. No really let's talk about what framework to use, how
+        to structure a project for future growth, or even about what WYSIWYG
+        editor is best.
       </PageHero>
 
       <PageContainer>
-        <div className="flex justify-between">
-          <div className="mr-12 prose prose-slate">
+        <div className="max-w-2xl mx-auto lg:max-w-none lg:flex lg:justify-between">
+          <div className="mb-8 lg:mb-0 lg:mr-12 prose prose-slate">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
               sequi sunt magnam laborum eligendi ratione animi veniam quod.
@@ -62,9 +63,10 @@ const HirePage: React.FC = () => {
               aliquam ea saepe distinctio rem.
             </p>
           </div>
+
           <div>
             <form
-              className="w-[40rem] space-y-8"
+              className="lg:w-[40rem] space-y-8"
               onSubmit={handleSubmit(onSubmit)}
             >
               <LibInput
