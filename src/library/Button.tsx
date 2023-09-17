@@ -19,7 +19,7 @@ const LibButton: React.FC<props> = ({
   href,
   type = "button",
   color,
-  hoverColor = "blueDark",
+  hoverColor = "blue-dark",
   isLarge = false,
   onClick,
   disabled = false,

@@ -9,7 +9,7 @@ type props = {
 const FavoriteItem: React.FC<props> = ({ favorite, color }) => {
   const headerColor = "bg-" + color;
   return (
-    <div className="flex flex-col bg-beigeDark">
+    <div className="flex flex-col bg-beige-dark">
       <div className={`${headerColor} py-3 px-4`}>
         <h3 className="text-3xl text-beige text-center font-bold">
           {favorite.name}

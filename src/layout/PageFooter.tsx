@@ -3,24 +3,24 @@ import Link from "next/link";
 const PageFooter: React.FC = () => {
   return (
     <footer className="max-w-6xl mx-auto mt-8 px-4">
-      <div className="flex justify-between items-center py-5 border-t border-tealLight">
+      <div className="flex justify-between items-center py-5 border-t border-teal-light">
         <nav className="space-x-4">
-          <Link className="text-sm text-blueDark font-bold" href="/">
+          <Link className="text-sm text-blue-dark font-bold" href="/">
             Home
           </Link>
-          <Link className="text-sm text-blueDark font-bold" href="/articles">
+          <Link className="text-sm text-blue-dark font-bold" href="/articles">
             Articles
           </Link>
           <Link
-            className="text-sm text-blueDark font-bold"
+            className="text-sm text-blue-dark font-bold"
             href="/software-ideas"
           >
             Software Ideas
           </Link>
-          <Link className="text-sm text-blueDark font-bold" href="/favorites">
+          <Link className="text-sm text-blue-dark font-bold" href="/favorites">
             Favorites
           </Link>
-          <Link className="text-sm text-blueDark font-bold" href="/talk-to-me">
+          <Link className="text-sm text-blue-dark font-bold" href="/talk-to-me">
             Contact
           </Link>
         </nav>

@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const PageHeader: React.FC = () => {
   return (
-    <div className="bg-blueDark">
+    <div className="bg-blue-dark bg-blue">
       <div className="max-w-6xl mx-auto px-4">
         <header className="flex items-center justify-between py-6">
           <Link

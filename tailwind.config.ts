@@ -25,14 +25,30 @@ const config: Config = {
       slate: colors.slate,
       black: colors.black,
       white: colors.white,
-      blueDark: "#142F43",
-      blue: "#166687",
-      teal: "#278a97",
-      tealLight: "#8ed2db",
-      yellow: "#FFBF00",
-      orange: "#E55807",
-      beige: "#f4f0e5",
-      beigeDark: "#e3ded2",
+      blue: {
+        light: "#36a2d1",
+        DEFAULT: "#166687",
+        dark: "#142F43",
+      },
+      teal: {
+        light: "#8ed2db",
+        DEFAULT: "#278a97",
+        dark: "#278a97",
+      },
+      yellow: {
+        light: "#f8d15d",
+        DEFAULT: "#FFBF00",
+        dark: "#d6a308",
+      },
+      orange: {
+        light: "#ed8345",
+        DEFAULT: "#E55807",
+        dark: "#bb5210",
+      },
+      beige: {
+        DEFAULT: "#f4f0e5",
+        dark: "#e3ded2",
+      },
       red: "#B22727",
     },
     extend: {

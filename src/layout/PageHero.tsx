@@ -5,7 +5,7 @@ type props = {
 
 const PageHero: React.FC<props> = ({ children, heading }) => {
   return (
-    <div className="bg-blueDark">
+    <div className="bg-blue-dark">
       <div className="max-w-6xl mx-auto px-4">
         <section className="text-beige py-20">
           <div className="max-w-2xl">

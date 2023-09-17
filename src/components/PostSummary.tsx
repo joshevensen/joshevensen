@@ -28,7 +28,7 @@ const PostSummary: React.FC<props> = ({ article, isWide = false }) => {
 
       <div
         onClick={goToArticle}
-        className="flex-grow p-3 cursor-pointer hover:bg-beigeDark"
+        className="flex-grow p-3 cursor-pointer hover:bg-beige-dark"
       >
         <h3 className="mb-1 text-3xl font-bold">{article.title}</h3>
 

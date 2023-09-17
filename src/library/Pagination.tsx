@@ -23,8 +23,8 @@ const LibPagination: React.FC<props> = ({
   const disableNext = higherCount === total;
 
   return (
-    <div className="flex justify-between mt-4 max-w-4xl pt-3 border-t border-tealLight">
-      <p className="text-blueDark">
+    <div className="flex justify-between mt-4 max-w-4xl pt-3 border-t border-teal-light">
+      <p className="text-blue-dark">
         Showing {lowerCount} to {higherCount} of {total} {label + plural}
       </p>
 
