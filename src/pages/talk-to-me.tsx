@@ -48,7 +48,7 @@ const HirePage: React.FC = () => {
 
       <PageContainer>
         <div className="max-w-2xl mx-auto lg:max-w-none lg:flex lg:justify-between">
-          <div className="mb-8 lg:mb-0 lg:mr-12 prose prose-slate">
+          <div className="mb-8 lg:mb-0 lg:mr-12 prose">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
               sequi sunt magnam laborum eligendi ratione animi veniam quod.
@@ -62,6 +62,25 @@ const HirePage: React.FC = () => {
               quisquam labore. Placeat repudiandae reprehenderit sunt magnam
               aliquam ea saepe distinctio rem.
             </p>
+
+            <div className="space-y-2">
+              <a
+                className="block"
+                href="https://github.com/joshevensen"
+                target="_blank"
+                rel="noopener"
+              >
+                Github Profile
+              </a>
+              <a
+                className="block"
+                href="https://www.upwork.com/freelancers/~01179721661b612701"
+                target="_blank"
+                rel="noopener"
+              >
+                Upwork Profile
+              </a>
+            </div>
           </div>
 
           <div>

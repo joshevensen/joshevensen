@@ -26,35 +26,21 @@ const HomePage: React.FC = () => {
       <PageContainer>
         <div className="md:flex md:justify-between">
           <div className="md:flex-grow prose">
+            <p>I started coding a decade ago.</p>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex
-              consequatur, voluptatum eveniet, ratione perspiciatis illo facilis
-              sed autem laudantium soluta blanditiis? At distinctio est,
-              provident in voluptatibus animi qui a?
+              I have a deep passion for building not only great looking and
+              functioning software, but also maintanable software.
             </p>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita
-              dolore, corporis natus, iste optio dolores dolor nulla nostrum
-              molestiae maxime quia rerum corrupti praesentium, ut doloribus
-              veniam non minus nihil.
+              It's been 5 years since I've done freelance work and I've decided
+              to get back into it. I want to bring the knowledge and experiences
+              I've had working on two different software projects to more
+              people.
             </p>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
-              quod iste ducimus fuga enim officiis pariatur aperiam natus quos
-              recusandae consequuntur, placeat tenetur! Facere aperiam
-              architecto cumque eaque, pariatur ea?
-            </p>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Distinctio explicabo ipsum dolorem alias nulla eligendi deleniti
-              eveniet iste, cum cumque quasi voluptates sed quo iusto ipsa ut
-              quos architecto reiciendis?
-            </p>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex
-              consequatur, voluptatum eveniet, ratione perspiciatis illo facilis
-              sed autem laudantium soluta blanditiis? At distinctio est,
-              provident in voluptatibus animi qui a?
+              I also want to use this website to record my thoughts and
+              communicate with other engineers, developers, designers, and
+              entrepreneurs about software.
             </p>
           </div>
 
