@@ -1,5 +1,5 @@
 import LibButton from "@/library/Button";
-// import NavLink from "@/layout/NavLink";
+import NavLink from "@/layout/NavLink";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -24,17 +24,17 @@ const PageHeader: React.FC = () => {
             <p className="ml-4 text-xl sm:text-2xl font-bold">Josh Evensen</p>
           </Link>
 
-          {/* <div className="flex items-center space-x-12"> */}
-          {/* <nav className="space-x-6"> */}
-          {/* <NavLink href="/articles">Articles</NavLink>
-              <NavLink href="/software-ideas">Software Ideas</NavLink>
-              <NavLink href="/favorites">Favorites</NavLink> */}
-          {/* </nav> */}
+          <div className="flex items-center space-x-12">
+            <nav className="space-x-6">
+              {/* <NavLink href="/articles">Articles</NavLink> */}
+              <NavLink href="/favorites">Favorites</NavLink>
+              <NavLink href="/how-to-plan-software">Software Planing</NavLink>
+            </nav>
 
-          <LibButton href="/talk-to-me" hoverColor="teal">
-            Talk To Me!
-          </LibButton>
-          {/* </div> */}
+            <LibButton href="/talk-to-me" hoverColor="teal">
+              Talk To Me!
+            </LibButton>
+          </div>
         </header>
       </div>
     </div>

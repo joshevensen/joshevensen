@@ -10,14 +10,10 @@ const HowToPlanSoftware: React.FC = () => {
       </Head>
 
       <PageHero heading="How to plan software from the very first step">
-        <p></p>
+        This is my book
       </PageHero>
 
       <PageContainer>
-        <div>
-          <p></p>
-        </div>
-
         <div>
           <h4>Table of Contents</h4>
 
@@ -28,7 +24,6 @@ const HowToPlanSoftware: React.FC = () => {
             <li>Feature Planning</li>
             <li>Code Structure</li>
             <li>Packages, Frameworks, and Services</li>
-            <li></li>
           </ul>
         </div>
       </PageContainer>
