@@ -1,98 +1,105 @@
-import SideWidget from "@/components/SideWidget";
 import PageContainer from "@/layout/PageContainer";
 import PageHero from "@/layout/PageHero";
 import ProjectItem from "@/components/ProjectItem";
-import WorkItem from "@/components/WorkItem";
-import {
-  BuildingOffice2Icon,
-  ComputerDesktopIcon,
-} from "@heroicons/react/24/outline";
 import Head from "next/head";
-import { getColor } from "@/helpers/color.helper";
+import LibDivider from "@/library/Divider";
+import ContactForm from "@/components/ContactForm";
+import BadgeLink from "@/components/BadgeLink";
 
 const HomePage: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Josh Evensen | Software Consultant</title>
+        <title>Josh Evensen | Software Builder</title>
       </Head>
 
-      <PageHero heading="Engineer, Designer, Entrepreneur... Software Consultant">
-        Hello World, my name is Josh, I'm just your friendly neighborhood
-        Software Consultant. This is a site all about me and the thing I care
-        about most: software. Just don't tell my wife ;)
+      <PageHero
+        heading="Software engineer, founder, and huge geek"
+        includeAvatar={true}
+      >
+        Hello World, my name is Josh Evensen. I'm just your friendly
+        neighborhood Software Builder and this is a site all about the thing I
+        care about most: software. Just don't tell my wife ;)
       </PageHero>
 
       <PageContainer>
-        <div className="md:flex md:justify-between">
-          <div className="md:flex-grow prose">
-            <p>I started coding a decade ago.</p>
+        <div className="lg:grid lg:grid-cols-3 lg:gap-16">
+          <ProjectItem
+            name="SitesByJason"
+            icon="/images/projects/sites-by-jason/sbj-icon.png"
+            label="AI Websites for Local Businesses"
+            link="sitesbyjason.com"
+          >
             <p>
-              I have a deep passion for building not only great looking and
-              functioning software, but also maintanable software.
+              This is a new project I just started in September. This project is
+              allowing me to learn ChatGPT and hone my React skills.
             </p>
+          </ProjectItem>
+
+          <LibDivider className="lg:hidden" />
+
+          <ProjectItem
+            name="Novelize"
+            icon="/images/projects/novelize/novelize-icon.png"
+            label="Novel Writing Software"
+            link="getnovelize.com"
+          >
             <p>
-              It's been 5 years since I've done freelance work and I've decided
-              to get back into it. I want to bring the knowledge and experiences
-              I've had working on two different software projects to more
-              people.
+              This is the first SaaS project I built and is still active since
+              2016. It's how first learned PHP and Vue.
             </p>
+          </ProjectItem>
+
+          <LibDivider className="lg:hidden" />
+
+          <ProjectItem
+            name="Forefront CRM"
+            icon="/images/projects/forefront/forefront-icon.png"
+            label="Real Estate Investor CRM"
+            link="forefrontcrm.com"
+          >
             <p>
-              I also want to use this website to record my thoughts and
-              communicate with other engineers, developers, designers, and
-              entrepreneurs about software.
+              I've been working with the Forefront team since 2018. I've been
+              the UI designer, frontend developer, and software manager over the
+              years.
             </p>
+          </ProjectItem>
+        </div>
+
+        <LibDivider />
+
+        <div className="max-w-xl mx-auto lg:max-w-none lg:flex lg:justify-between">
+          <div className="lg:w-[30rem] mb-8 lg:mb-0 lg:mr-12 prose prose-xl">
+            <h3>Josh Evensen...</h3>
+
+            <p>
+              I started coding a little over a decade ago. I started out taking
+              designs and turning them into websites.
+            </p>
+
+            <p>
+              Nowadays I enjoy building and thinking about software. This site
+              is my place to showcase what I'm working at the moment and to
+              share some of my thoughts.
+            </p>
+
+            <p>
+              I'm an introvert and not much into social media. However, there
+              are a few places you can find me online:
+            </p>
+
+            <div className="flex space-x-6">
+              <BadgeLink href="https://github.com/joshevensen">
+                Github
+              </BadgeLink>
+
+              <BadgeLink href="https://www.upwork.com/freelancers/~01179721661b612701">
+                Upwork
+              </BadgeLink>
+            </div>
           </div>
 
-          <div className="mt-12 md:mt-0 md:ml-16 space-y-12">
-            <SideWidget
-              heading="Noteable Projects"
-              icon={<ComputerDesktopIcon className="h-5 w-5 mr-2" />}
-            >
-              <ProjectItem
-                name="Novelize"
-                link="getnovelize.com"
-                borderColor={getColor(0, "border-")}
-              >
-                <p>Novel Writing Software</p>
-              </ProjectItem>
-
-              <ProjectItem
-                name="Forefront CRM"
-                link="forefrontcrm.com"
-                borderColor={getColor(1, "border-")}
-              >
-                <p>Real Estate Investor Software</p>
-              </ProjectItem>
-            </SideWidget>
-
-            <SideWidget
-              heading="Past Work"
-              icon={<BuildingOffice2Icon className="h-5 w-5 mr-2" />}
-            >
-              <WorkItem
-                name="Even7 Development, LLC"
-                title="Owner, Founder"
-                startAt="2016"
-                borderColor={getColor(2, "border-")}
-              />
-
-              <WorkItem
-                name="Random Noise Media, LLC"
-                title="Product Manager"
-                startAt="2023"
-                borderColor={getColor(3, "border-")}
-              />
-
-              <WorkItem
-                name="Freedom Driven, LLC"
-                title="Software Engineer"
-                startAt="2018"
-                endAt="2023"
-                borderColor={getColor(4, "border-")}
-              />
-            </SideWidget>
-          </div>
+          <ContactForm />
         </div>
       </PageContainer>
     </>

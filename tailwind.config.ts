@@ -1,13 +1,38 @@
 import type { Config } from "tailwindcss";
 const colors = require("tailwindcss/colors");
 
-const hexToRgb = (hex: string) => {
-  hex = hex.replace("#", "");
-  hex = hex.length === 3 ? hex.replace(/./g, "$&$&") : hex;
-  const r = parseInt(hex.substring(0, 2), 16);
-  const g = parseInt(hex.substring(2, 4), 16);
-  const b = parseInt(hex.substring(4, 6), 16);
-  return `${r} ${g} ${b}`;
+export const palette = {
+  blue: {
+    light: "#36a2d1",
+    DEFAULT: "#095ea0",
+    dark: "#3a495d",
+  },
+  green: {
+    light: "#61eeac",
+    DEFAULT: "#1B9C85",
+    dark: "#0c5245",
+  },
+  yellow: {
+    light: "#f8d15d",
+    DEFAULT: "#edb202",
+    dark: "#d6a308",
+  },
+  orange: {
+    light: "#ed8345",
+    DEFAULT: "#E55807",
+    dark: "#bb5210",
+  },
+  beige: {
+    100: "#f4f0e5",
+    200: "#dcd8ce",
+    300: "#c3c0b7",
+    400: "#aba8a0",
+    500: "#929089",
+    600: "#7a7873",
+    700: "#62605c",
+    800: "#494845",
+    900: "#31302e",
+  },
 };
 
 /** @type {import('tailwindcss').Config} */
@@ -29,64 +54,64 @@ const config: Config = {
     },
     colors: {
       transparent: "transparent",
-      slate: colors.slate,
-      black: colors.black,
-      white: colors.white,
-      blue: {
-        light: "#36a2d1",
-        DEFAULT: "#166687",
-        dark: "#142F43",
-      },
-      teal: {
-        light: "#8ed2db",
-        DEFAULT: "#278a97",
-        dark: "#278a97",
-      },
-      yellow: {
-        light: "#f8d15d",
-        DEFAULT: "#FFBF00",
-        dark: "#d6a308",
-      },
-      orange: {
-        light: "#ed8345",
-        DEFAULT: "#E55807",
-        dark: "#bb5210",
-      },
-      beige: {
-        DEFAULT: "#f4f0e5",
-        dark: "#e3ded2",
-      },
+      black: "#181817",
+      white: "#fcfbf7",
+
+      blue: palette.blue,
+      green: palette.green,
+      yellow: palette.yellow,
+      orange: palette.orange,
       red: "#B22727",
+
+      beige: palette.beige,
+
+      background: {
+        DEFAULT: palette.beige[100],
+        dark: palette.beige[200],
+      },
+      border: palette.beige[300],
+      text: {
+        light: palette.beige[500],
+        DEFAULT: palette.beige[800],
+        dark: palette.beige[900],
+      },
+      link: {
+        DEFAULT: palette.orange["DEFAULT"],
+        hover: palette.yellow["DEFAULT"],
+      },
+      button: {
+        DEFAULT: palette.orange["DEFAULT"],
+        hover: palette.yellow["DEFAULT"],
+      },
     },
     extend: {
       typography: (theme: any) => ({
         DEFAULT: {
           css: {
-            "--tw-prose-body": theme("colors.blue[Dark]"),
-            "--tw-prose-headings": theme("colors.blue[Dark]"),
-            "--tw-prose-lead": theme("colors.blue[DEFAULT]"),
-            "--tw-prose-links": theme("colors.orange[DEFAULT]"),
-            "--tw-prose-bold": theme("colors.slate[900]"),
-            "--tw-prose-counters": theme("colors.slate[500]"),
-            "--tw-prose-bullets": theme("colors.slate[300]"),
-            "--tw-prose-hr": theme("colors.slate[200]"),
-            "--tw-prose-quotes": theme("colors.slate[900]"),
-            "--tw-prose-quote-borders": theme("colors.slate[200]"),
-            "--tw-prose-captions": theme("colors.slate[500]"),
-            "--tw-prose-kbd": theme("colors.slate[900]"),
-            "--tw-prose-kbd-shadows": hexToRgb(theme("colors.slate[900]")),
-            "--tw-prose-code": theme("colors.slate[900]"),
-            "--tw-prose-pre-code": theme("colors.slate[200]"),
-            "--tw-prose-pre-bg": theme("colors.slate[800]"),
-            "--tw-prose-th-borders": theme("colors.slate[300]"),
-            "--tw-prose-td-borders": theme("colors.slate[200]"),
+            "--tw-prose-body": theme("colors.text.DEFAULT"),
+            "--tw-prose-headings": theme("colors.text.DEFAULT"),
+            "--tw-prose-lead": theme("colors.text.DEFAULT"),
+            "--tw-prose-links": theme("colors.orange.DEFAULT"),
+            "--tw-prose-bold": theme("colors.text.dark"),
+            "--tw-prose-counters": theme("colors.text.DEFAULT"),
+            "--tw-prose-bullets": theme("colors.text.light"),
+            "--tw-prose-hr": theme("colors.border"),
+            "--tw-prose-quotes": theme("colors.text.DEFAULT"),
+            "--tw-prose-quote-borders": theme("colors.border"),
+            "--tw-prose-captions": theme("colors.text.light"),
+            "--tw-prose-kbd": theme("colors.text.DEFAULT"),
+            "--tw-prose-code": theme("colors.text.DEFAULT"),
+            "--tw-prose-pre-code": theme("colors.text.DEFAULT"),
+            "--tw-prose-pre-bg": theme("colors.background.DEFAULT"),
+            "--tw-prose-th-borders": theme("colors.border"),
+            "--tw-prose-td-borders": theme("colors.border"),
             h2: {
               marginTop: "1.25rem",
               marginBottom: "0.625rem",
             },
             a: {
               "&:hover": {
-                color: theme("colors.yellow"),
+                color: theme("colors.link['hover']"),
               },
             },
             pre: {

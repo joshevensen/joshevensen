@@ -100,7 +100,7 @@ const LibInput: React.FC<props> = ({
   isInline = false,
 }) => {
   let inputClasses =
-    "block border-0 ring-1 ring-inset ring-beige-dark py-2 pl-3 bg-white text-blue-dark placeholder:text-teal focus:ring-inset focus:ring-orange";
+    "block bg-white border-0 rounded-lg py-2.5 px-3 bg-white text-text placeholder:text-text-light focus:ring-4 focus:ring-inset focus:ring-yellow";
 
   let fieldClasses = "";
 
@@ -117,10 +117,7 @@ const LibInput: React.FC<props> = ({
 
   return (
     <div className={fieldClasses}>
-      <label
-        className="block mb-1 px-1 font-bold leading-6 text-blue-dark"
-        htmlFor={name}
-      >
+      <label className="block mb-1 px-1 font-bold leading-6" htmlFor={name}>
         {label}
       </label>
 

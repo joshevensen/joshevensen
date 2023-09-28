@@ -1,33 +1,43 @@
 import { LinkIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
+import BadgeLink from "./BadgeLink";
 
 type props = {
   children: any;
   name: string;
+  icon: string;
+  label: string;
   link: string;
-  borderColor: string;
 };
 
 const ProjectItem: React.FC<props> = ({
   children,
   name,
+  icon,
+  label,
   link,
-  borderColor,
 }) => {
   return (
-    <div className={`pl-3 border-l-4 ${borderColor}`}>
-      <p className="mb-1 text-xl font-bold leading-none">{name}</p>
+    <div className="flex flex-col max-w-xl mx-auto">
+      <div className="flex items-center">
+        <div className="w-12 h-12 mr-4">
+          <Image src={icon} alt={label} width={64} height={64} />
+        </div>
 
-      <div className="flex items-start flex-wrap">
-        <div className="sm:mb-1 mr-4">{children}</div>
-        <a
-          className="flex items-center text-orange hover:text-yellow"
-          href={`https://${link}`}
-          target="_blank"
-          rel="noopener"
-        >
-          <LinkIcon className="h-4 w-4 mr-1" />
-          {link}
-        </a>
+        <div>
+          <p className="mb-1 text-3xl font-bold leading-none tracking-wide">
+            {name}
+          </p>
+          <p className="text-text-light leading-none">{label}</p>
+        </div>
+      </div>
+
+      <div className="prose">
+        <div>{children}</div>
+      </div>
+
+      <div className="mt-auto">
+        <BadgeLink href={`https://${link}`}>{link}</BadgeLink>
       </div>
     </div>
   );
