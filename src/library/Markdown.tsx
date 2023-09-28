@@ -39,12 +39,9 @@ const LibMarkdown: React.FC<props> = ({ children }) => {
       }
 
       return (
-        <SyntaxHighlighter
-          style={tomorrow}
-          language={language}
-          children={children}
-          PreTag="div"
-        />
+        <SyntaxHighlighter style={tomorrow} language={language} PreTag="div">
+          {children}
+        </SyntaxHighlighter>
       );
     },
   };
