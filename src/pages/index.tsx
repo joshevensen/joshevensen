@@ -25,14 +25,14 @@ const HomePage: React.FC = () => {
       <PageContainer>
         <div className="lg:grid lg:grid-cols-3 lg:gap-16">
           <ProjectItem
-            name="SitesByJason"
-            icon="/images/projects/sites-by-jason/sbj-icon.png"
-            label="AI Websites for Local Businesses"
-            link="sitesbyjason.com"
+            name="Bad Frog Yarn Co"
+            icon="/images/projects/bad-frog-yarn-co/bad-frog-yarn-co-icon.png"
+            label="Hand Dyed Yarn Store"
+            link="badfrogyarnco.com"
           >
             <p>
-              This is a new project I just started in September. This project is
-              allowing me to learn ChatGPT and hone my React skills.
+              A Shopify store selling yarn my wife hand dyes. I've done the
+              design and administration for the store.
             </p>
           </ProjectItem>
 
