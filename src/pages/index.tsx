@@ -31,8 +31,8 @@ const HomePage: React.FC = () => {
             link="badfrogyarnco.com"
           >
             <p>
-              A Shopify store selling yarn my wife hand dyes. I've done the
-              design and administration for the store.
+              A new Shopify store selling yarn my wife's hand dyed yarn. I'm in
+              charge of the design and administration for the store.
             </p>
           </ProjectItem>
 
