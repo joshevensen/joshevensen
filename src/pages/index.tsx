@@ -93,8 +93,8 @@ const HomePage: React.FC = () => {
                 Github
               </BadgeLink>
 
-              <BadgeLink href="https://www.upwork.com/freelancers/~01179721661b612701">
-                Upwork
+              <BadgeLink href="https://www.linkedin.com/in/josh-evensen/">
+                LinkedIn
               </BadgeLink>
             </div>
           </div>
